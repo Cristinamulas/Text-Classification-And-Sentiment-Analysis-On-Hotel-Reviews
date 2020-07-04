@@ -65,7 +65,7 @@ def clf_grid(model, df, col, col1, parameteres):
     
     grid = GridSearchCV(pipeline, param_grid=parameteres, cv=5)
     grid.fit(X_train, y_train)
-#     m_best = grid.best_estimator_ maybe used?
+    m_best = grid.best_estimator_ 
     y_pred = m_best.predict(X_test)
 
     end = timeit.timeit()
@@ -101,4 +101,17 @@ def table_manupulation(df , col):
     df = df.reset_index(drop=True)
     return df
 
+
+def unnest_df(df):
+    
+    df_recall_pre_f1 = df.loc[: ,['Recall_score' , 'Precision_score' , 'F1_score']]
+    recall = table_manupulation(df_recall_pre_f1, 'Recall_score')
+    precision = table_manupulation(df_recall_pre_f1, 'Precision_score')
+    f1_score = table_manupulation(df_recall_pre_f1, 'F1_score')
+    df_metrix = pd.DataFrame([recall, precision, f1_score]).transpose()
+    df_metrix['target_class'] = pd.Series([1,2,3,4,5] * 5)
+    repeat_model = pd.Series(['Logistic Regresion', 'Decision Tree Classifier', 'Mutinomial NB', 'Linear Support Vector Classification', 'Random Forest Classifier'])
+    repeat_model = repeat_model.repeat(5).reset_index()
+    df_metrix['model']  = repeat_model.drop(columns='index')
+    return df_metrix
 
