@@ -1,5 +1,6 @@
 import pandas as pd
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -8,6 +9,7 @@ from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_sc
 from sklearn.feature_selection import SelectKBest, chi2
 from sklearn.metrics import precision_score, recall_score, accuracy_score, f1_score, confusion_matrix
 from sklearn.metrics import classification_report
+from sklearn.metrics import plot_confusion_matrix
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -49,6 +51,9 @@ def clf(model, df, col1, col):
     precision = precision_score(y_test, preds,average=None, pos_label='Good')
     f_1 = f1_score(y_test , preds,average=None, pos_label='Good')
     final_time = start - end
+    cm = confusion_matrix(y_test, preds)
+    plot_confusion_matrix(classification_model, X_test, y_test)  
+    plt.show()
 
     score_list.extend([accuracy,recall,precision,f_1,final_time])
     dictionary = dict(zip(list_names, score_list))
@@ -82,7 +87,10 @@ def clf_grid(model, df, col, col1, parameteres):
     recall = recall_score(y_test, y_pred,average=None, pos_label='Good')
     precision = precision_score(y_test, y_pred,average=None, pos_label='Good')
     f_1 = f1_score(y_test , y_pred,average=None, pos_label='Good')
-#     roc_auc = metrics.roc_auc_score(y_test, preds)
+    cm = confusion_matrix(y_test, preds)
+    plot_confusion_matrix(classification_model, X_test, y_test)  # doctest: +SKIP
+    plt.show()
+
     final_time = start - end
 
     score_list.extend([accuracy,recall,precision,f_1,final_time])
@@ -145,6 +153,10 @@ def clf_count_vectorizer(model, df, col1, col):
     classification_model.fit(X_train, y_train)
     
     preds = classification_model.predict(X_test)
+    cm = confusion_matrix(y_test, preds)
+    plot_confusion_matrix(classification_model, X_test, y_test)  # doctest: +SKIP
+    plt.show()
+
     end = timeit.timeit()
     final_time = start - end
 
@@ -154,6 +166,7 @@ def clf_count_vectorizer(model, df, col1, col):
     recall = recall_score(y_test, preds,average=None, pos_label='Good')
     precision = precision_score(y_test, preds,average=None, pos_label='Good')
     f_1 = f1_score(y_test , preds,average=None, pos_label='Good')
+    
     final_time = start - end
 
     score_list.extend([accuracy,recall,precision,f_1,final_time])
@@ -188,7 +201,9 @@ def clf_grid_count_vectorizer(model, df, col, col1, parameteres):
     recall = recall_score(y_test, y_pred,average=None, pos_label='Good')
     precision = precision_score(y_test, y_pred,average=None, pos_label='Good')
     f_1 = f1_score(y_test , y_pred,average=None, pos_label='Good')
-#     roc_auc = metrics.roc_auc_score(y_test, preds)
+    cm = confusion_matrix(y_test, preds)
+    plot_confusion_matrix(classification_model, X_test, y_test)  # doctest: +SKIP
+    plt.show()
     
     final_time = start - end
 
