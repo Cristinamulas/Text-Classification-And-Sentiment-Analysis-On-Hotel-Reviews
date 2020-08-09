@@ -6,14 +6,14 @@ The focus of this study is training supervised learning text classification mode
 
 
 ## Data Collection
-I scraped the data from the TripAdvisor website using Beautifull Soup and Selenium libraries. The dataset contains the reviews, users and ratings from hotels in TripAdvisor located in New York. The data set has 25,050 entries.
+I scraped the data from the TripAdvisor website using Beautiful Soup and Selenium libraries. The dataset contains the reviews, users and ratings from hotels in TripAdvisor located in New York. The data set has 25,050 entries.
 
 
 ## Exploratory Data Anlaysis (EDA) 
 
-Most of the reviews have a 5 stars that is 47% of the data. Only 7% of reviews have 1 star. 
+Most of the reviews have 5 stars and this is 47% of the data. Only 7% of the reviews have 1 star. 
 
-There are 22,205 unique reviews in the data which is quite diverse. The average user has contributed with 1 review to the dataframe. The top reviewer (Marck C) has contributed 13 reviews.
+There are 22,205 unique reviews in the data which is quite diverse. The average user has contributed with 1 review to the dataframe. The top reviewer has contributed 13 reviews.
 
 The maximum number of characters in a review is 2,535 and the minimum number is 195 characters. The average length of characters in a review is 469 characters.
 
@@ -36,9 +36,9 @@ The graph below shows the comparison of negative and positive sentiment scores a
 ![](Images/sentiment.png)
 
 ## Performance of ML Models
-I trained the following classifications algorithms: Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, Adaboost, XGBoost, Linear Support Vector Classification and Multinomial Naive Bayes. Afterwards, I tuned the parameters of the models to maximize the model performance using a combinatorial grid search. 
+I trained the following classifications algorithms: Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, AdaBoost, XGBoost, Linear Support Vector Classification and Multinomial Naive Bayes. Afterwards, I tuned the parameters of the models to maximize the model performance using a combinatorial grid search. 
 
-For this particular dataset the TF-IDF vectorization performs better than the word count method. Binary classification demonstrated the best approach for this project. After testing all the classifiers, the one with higher accuracy score was Support Vector Machine which achieved a 87% accuracy rate after tuning the parameters. 
+For this particular dataset the TF-IDF vectorization performs better than the word count method. Binary classification demonstrated the best approach for this project. After testing all of the classifiers, the one with higher accuracy score was Support Vector Machine which achieved a 87% accuracy rate after tuning the parameters. 
 
 ![](Images/svm.png)
 
