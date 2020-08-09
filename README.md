@@ -1,7 +1,7 @@
 # Text Classification And Sentiment Analysis On Hotel Reviews
 
 ## Goal
-The focus of this study is training supervised learning text classification models to see whether or not its possible to predict reviews ratings and to identificate whenever a review expressed a positive or negative opinion, with the implementation of sentiment analysis.
+The focus of this study is training supervised learning text classification models to see whether or not its possible to predict reviews ratings and to identify whenever a review expressed a positive or negative opinion, with the implementation of sentiment analysis.
 
 
 
