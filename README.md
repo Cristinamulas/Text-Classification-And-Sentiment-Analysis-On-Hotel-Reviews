@@ -1,7 +1,9 @@
 # Text Classification And Sentiment Analysis On Hotel Reviews
 
 ## Goal
-The focus of this study is training supervised learning text classification models to see whether or not its possible to predict reviews ratings. The dataset was scraped from TripAdvisor and contained the name of a person leaving a review, the actual user review and the rating from the top ten rated hotels. After tokenizing, lemmatize and filtering the data, I vectorized the reviews first with the term frequency-inverse document frequency (tf-idf) method, which provides insight to the weight of each word in each document and also with count vectorizer that transforms the text in vectors of the tokens counts. 
+The focus of this study is training supervised learning text classification models to see whether or not its possible to predict reviews ratings and to identificate whenever a review expressed a positive or negative opinion, with the implementation of sentiment analysis.
+
+
 
 ## Data Collection
 I scraped the data from the TripAdvisor website using Beautifull Soup and Selenium libraries. The dataset contains the reviews, users and ratings from hotels in TripAdvisor located in New York. The data set has 25,050 entries.
@@ -34,7 +36,7 @@ The graph below shows the comparison of negative and positive sentiment scores a
 ![](Images/sentiment.png)
 
 ## Performance of ML Models
-I trained the following classifications algorithms: Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, Adaboost, XGBoost, Linear Support Vector Classification and Multinomial Naive Bayes. Afterwards, I will tune the parameters of the models to maximize the model performance using a combinatorial grid search. 
+I trained the following classifications algorithms: Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, Adaboost, XGBoost, Linear Support Vector Classification and Multinomial Naive Bayes. Afterwards, I tuned the parameters of the models to maximize the model performance using a combinatorial grid search. 
 
 For this particular dataset the TF-IDF vectorization performs better than the word count method. Binary classification demonstrated the best approach for this project. After testing all the classifiers, the one with higher accuracy score was Support Vector Machine which achieved a 87% accuracy rate after tuning the parameters. 
 
