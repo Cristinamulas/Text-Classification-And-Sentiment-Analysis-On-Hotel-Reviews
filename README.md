@@ -15,7 +15,7 @@ There are 22,205 unique reviews in the data which is quite diverse. The average 
 
 The maximum number of characters in a review is 2,535 and the minimum number is 195 characters. The average length of characters in a review is 469 characters.
 
-![](Images/review_frequency)
+![](Images/review_frequency.png)
 
 ## Data Preprocessing / Feature Engineering
 
