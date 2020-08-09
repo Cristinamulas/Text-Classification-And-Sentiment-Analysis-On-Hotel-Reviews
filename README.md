@@ -16,3 +16,7 @@ There are 22,205 unique reviews in the data which is quite diverse. The average 
 The maximum number of characters in a review is 2,535 and the minimum number is 195 characters. The average length of characters in a review is 469 characters.
 
 ![](Images/review_frequency)
+
+## Data Preprocessing / Feature Engineering
+
+Given clean data, I used Spacy to tokenize, lemmatize and filter the data. I have vectorized the reviews with term frequency-inverse document frequency (tf-idf) values, which provided insight to the weight of each word in each document and also with Word Count vectorizer.
