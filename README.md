@@ -21,9 +21,9 @@ The maximum number of characters in a review is 2,535 and the minimum number is 
 
 ## Data Preprocessing / Feature Engineering
 
-Given clean data, I used Spacy to tokenize, lemmatize and filter the data. I have vectorized the reviews with term frequency-inverse document frequency (tf-idf) values, which provided insight to the weight of each word in each document and also with Word Count vectorizer.
+Given clean data, I used the Spacy library to tokenize, lemmatize and filter the data. I have vectorized the reviews with term frequency-inverse document frequency (tf-idf) values, which provided insight to the weight of each word in each document and also with Word Count vectorizer.
 
-## Visualization of Word Frequecies and Wordcloud
+## Visualization of Word Frequecies and Word Cloud
 
 ![](Images/frequency_count.png)
 
